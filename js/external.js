@@ -1,4 +1,4 @@
-"use strict",
+"use strict";
 
 //... rest of javascript code
 
@@ -37,3 +37,8 @@ alert("I am getting paid: " + ((400*10) + (380 * 6) + (350 * 4)));
 var full = confirm("Is the class full?");
 var conflict = confirm("Is there a conflict?");
 alert("You can enroll in class:" + (!full && !conflict));
+
+var premium = confirm("Are you a premium member?");
+var quantity = Number(prompt( message: "How many items did you buy?"));
+var expired = confirm("Is the coupon expired?");
+alert("You can get the discount" + ((!expired) && (premium || (quantity > 2))));
