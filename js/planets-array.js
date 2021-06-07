@@ -28,7 +28,7 @@
     console.log(planets);
 
     console.log('Removing "The Sun" from the beginning of the planets array.');
-    planets.pop("The Sun");
+    planets.shift("The Sun");
     console.log(planets);
 
     console.log('Removing "Pluto" from the end of the planets array.');
