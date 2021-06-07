@@ -15,7 +15,7 @@ while (true) {
 for (let index = 0; index < 50; index++) {
     if (index == oddNumber) {
         console.log("Yikes! Skipping number:  " + index);
-        continue
+        continue;
     }
     if (index %2 !=0) {
         console.log("Here is an odd number: " + index);
