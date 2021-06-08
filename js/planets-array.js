@@ -48,3 +48,11 @@
     planets.sort();
     console.log(planets);
 })();
+
+var authors = [
+    {firstName: "Tony", lastName: "Robbins"},
+    {firstName: "Benjamin", lastName: "Graham"},
+    {firstName: "Nelson", lastName: "Mandela"},
+    {firstName: "Garret", lastName: "Gunderson"},
+    {firstName: "Nelson", lastName: "Demille"},
+]
