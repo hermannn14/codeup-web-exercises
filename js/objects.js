@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     * TODO:
+     *
      * Create an object with firstName and lastName properties that are strings
      * with your first and last name. Store this object in a variable named
      * `person`.
@@ -21,7 +21,7 @@
     console.log(person.lastName);
 
     /**
-     * TODO:
+     *
      * Add a sayHello method to the person object that returns a greeting using
      * the firstName and lastName properties.
      * console.log the returned message to check your work
@@ -35,7 +35,7 @@
     };
     console.log(person.sayHello());
 
-    /** TODO:
+    /**
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
      * discount. Write a JS program, using conditionals, that logs to the
@@ -71,7 +71,7 @@
     });
 
 
-    /** TODO:
+    /**
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
      * property. The author property should be an object with properties
@@ -103,7 +103,6 @@
     console.log(books[4].author.firstName + " " + books[4].author.lastName);
 
     /**
-     * TODO:
      * Loop through the books array and output the following information about
      * each book:
      * - the book number (use the index of the book in the array)
