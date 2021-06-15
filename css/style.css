@@ -1,0 +1,51 @@
+
+/*.fancy-header {*/
+/*    color: purple; !* single line comment *!*/
+/*    text-decoration: underline;*/
+/*}*/
+/*h2*/
+
+/*#container h2{*/
+/*    color: blue;*/
+/*}*/
+
+h1 {
+    text-align: center;
+}
+
+h1, h2{
+    color: #007069;
+    text-decoration: underline;
+}
+
+body{
+    background-color: #333333;
+    background-image: url() ;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    height: 100%;
+}
+
+ul > li {
+    list-style-type: square;
+}
+
+*{
+    font-family: 'Indie Flower', cursive;
+}
+
+td, tr {
+    padding: 10px;
+    font-size: 1em;
+}
+
+a:hover {
+    color: #eeeeee;
+    font-size: 1.2em;
+    transition: 500ms;
+}
+
+a:visited {
+    color: #ca3a11;
+}
