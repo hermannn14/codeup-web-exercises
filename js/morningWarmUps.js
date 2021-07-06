@@ -19,3 +19,21 @@ var solution = countSpaces('otterboxblue');
 console.log(solution);
 var solution = countSpaces(" mama I made it !")
 console.log(solution);
+
+// July 6th 2021
+// TODO: Create a function named capitalizeAllNames that accepts an array of strings and returns the array with all of its elements capitalized.
+
+function capitalizeAllNames([]) {
+    var names = ["Jean", "jacques", "rousseau"];
+    return (names.toUpperCase);
+}
+var names = ["Jean", "jacques", "rousseau"]
+console.log(names.toUpperCase);
+// Example:  capitalizeAllNames(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["BOB","SETH","TOFU","TOYOTA"]
+// TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
+function capitalizeFirstLetter([]) {
+    var
+}
+
+//  each string being capitalized while having the rest of the string lowercase look at the example below for reference.
+// Example:  capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["Bob","Seth","Tofu","Toyota"]
