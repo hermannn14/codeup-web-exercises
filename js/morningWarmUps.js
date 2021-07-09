@@ -90,16 +90,17 @@ var personThree = {
 //                    { "originalString":"dave", lengthOfOriginalString:4 }
 //                   ]
 
-function StringObjects(stringarray) {
-    var arrayItems = []
+function arrayOfStringToObjects(arrayStrings) {
+    var arrayObjects = []
 
-    for (let i = 0; i < stringarray.length; i++) {
+    for (let i = 0; i < arrayStrings.length; i++) {
         console.log(stringarray[i])
-        arrayItems.push ({originalString:stringarray[i], lengthOfOriginalString:stringarray[i].length})
+        arrayObjects.push ({originalString:arrayStrings[i], lengthOfOriginalString:arrayStrings[i].length})
     }
-    return items;
+    return arrayObjects;
 }
-console.log(StringObjects(["hello", "dave"]))
+var arrayOfObjects = arrayOfStringToObjects(["hello", "dave"])
+console.log(arrayOfObjects)
 
 // Part 2
 // TODO: Create a function that takes the array of objects from PART 1
@@ -109,9 +110,28 @@ console.log(StringObjects(["hello", "dave"]))
 //                    { "originalString":"dave", lengthOfOriginalString:4 }
 //                  ]
 //          returns: "hello dave"
+// function arrayOfObjectsToStrings(arrayOfObjects) {
+//     var results = []
+
+}
 // TODO: Create a function named getTallUsers that accepts an array of objects. The objects in the array will be in the same format
 //  as PersonOne, PersonTwo, and PersonThree. The functions job is to return an array of users that have heightInInches equal to or greater than 65.
 var people = [personOne, personTwo, personThree];
+function getTallUsers(arrayofObjects) {
+    var tallUsers = [];
+
+    for (let i = 0; i < arrayofObjects.length; i++) {
+        var currentUser = arrayofObjects[i];
+        var currentUsersHeight = currentUser.heightInInches;
+
+        if(currentUsersHeight >= 65) {
+            tallUsers.push(currentUser)
+        }
+        return tallUsers
+    }
+    console.log(getTallUsers(people));
+
+}
 // Example: getTallUsers(people)
 // ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
 //
