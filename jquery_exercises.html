@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery</title>
+</head>
+<body>
+<h1>Learning JQuery</h1>
+
+<div class ="Codeup" id="This is Codeup">
+    <h1 id="codeup">Hello Codeup</h1>
+</div>
+
+<div class="Codeup">
+
+<div class = "Codeup" id="Trailhead">
+    <p>I think I can definitely be better</p>
+    <p>It starts by showing up everyday</p>
+
+    <ul>
+        <li>Embrace</li>
+        <li>The</li>
+        <li>Pain</li>
+        <li>Codeup</li>
+        <li>Struggle</li>
+    </ul>
+</div>
+</div>
+
+
+
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery_exercises.js"></script>
+<script>
+    "use strict"
+
+    $(document).ready(function () {
+        alert($('h1').html());
+
+        // $('.Codeup').css('border', 'solid 1px red');
+        // $('li').css('font-size', '20px');
+        // $('h1').css('background-color', 'yellow');
+        // $('p').css('background-color', 'yellow');
+        // $('li').css('background-color', 'yellow');
+        $('h1, p, li').css('background-color', 'yellow');
+    });
+
+</script>
+</body>
+</html>
