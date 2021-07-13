@@ -6,44 +6,68 @@
 <body>
 <h1>Learning JQuery</h1>
 
-<div class ="Codeup" id="This is Codeup">
+<div class="Codeup" id="This is Codeup">
     <h1 id="codeup">Hello Codeup</h1>
 </div>
 
 <div class="Codeup">
 
-<div class = "Codeup" id="Trailhead">
-    <p>I think I can definitely be better</p>
-    <p>It starts by showing up everyday</p>
+    <div class="Codeup" id="Trailhead">
+        <p>I think I can definitely be better</p>
+        <p>It starts by showing up everyday</p>
 
-    <ul>
-        <li>Embrace</li>
-        <li>The</li>
-        <li>Pain</li>
-        <li>Codeup</li>
-        <li>Struggle</li>
-    </ul>
+        <ul>
+            <li>Embrace</li>
+            <li>The</li>
+            <li>Pain</li>
+            <li>Codeup</li>
+            <li>Struggle</li>
+        </ul>
+    </div>
 </div>
-</div>
 
 
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="./js/jquery.js"></script>
-<script src="./js/jquery_exercises.js"></script>
+
 <script>
-    "use strict"
 
-    $(document).ready(function () {
-        alert($('h1').html());
+//       alert($('h1').html());
 
-        // $('.Codeup').css('border', 'solid 1px red');
-        // $('li').css('font-size', '20px');
-        // $('h1').css('background-color', 'yellow');
-        // $('p').css('background-color', 'yellow');
+          // $('.Codeup').css('border', 'solid 1px red');
+          // $('li').css('font-size', '20px');-->
+          // $('h1').css('background-color', 'yellow');
+          // $('p').css('background-color', 'yellow');
         // $('li').css('background-color', 'yellow');
-        $('h1, p, li').css('background-color', 'yellow');
+        //       $('h1, p, li').css('background-color', 'yellow');
+        //
+        //     });
+        "use strict";
+        $(document).ready(function () {
+        function whenClickedOnce(event) {
+            $(this).css({'background-color': '#b64141'})
+            $(this).css({'color': 'rgba(138,245,9,0.79)'})
+        }
+        $('h1').click(whenClickedOnce);
+
+        function doubleClicked(event) {
+            $(this).css({'font-size': '18px'})
+        }
+        $('p').dblclick(doubleClicked);
+        
+        function hoverIn(event) {
+            $(this).css('color', '#995e16')
+        }
+
+        function hoverOut(event) {
+            $(this).css('color', '#000000')
+        }
+        $('li').hover(hoverIn, hoverOut);
+
     });
 
 </script>
+<!--<script src="./js/jquery_exercises.js"></script>-->
+
 </body>
 </html>
