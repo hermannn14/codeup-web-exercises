@@ -11,7 +11,9 @@
 .invisible {
     visibility: hidden;
 }
-
+.yellow {
+    color: yellow;
+}
 </style>
 
 <p>National Parks FAQ</p>
@@ -50,12 +52,37 @@
     <dd>You can obtain park entrance passes by visiting a park site that charges an entrance fee.</dd>
 
 </dl>
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+<h3>Redwood National Park</h3>
+<ul id="state-parks-texas">
+    <li>Covers a total area of 131,983 acres</li>
+    <li>Made a national park on October 2, 1968</li>
+    <li>No entrance fee </li>
+    <li>lies in the Pacific time zone</li>
+    <li>The lowest elevation found is 0 feet</li>
+</ul>
 <button class="toggler">Toggle DD's Visibility</button>
+<button class="toggling">Change li to yellow</button>
 
-<script src="./js/jquery.js"></script>
+
 <!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
 
-
+<script src="./js/jquery.js"></script>
 <script>
     $(document).ready(function() {
 
@@ -70,8 +97,24 @@
           $(this).css('background-color', 'green')
         });
 
+        $('.toggling').click(function() {
+            $('li').toggleClass('yellow')
 
-    });
+            // var List_parks = $('ul>li')
+            // List_parks.css({'color': 'brown'})
+        })
+
+        $('h3').click(function () {
+            $(this).next().children().css('font-weight', 'bold')
+        });
+
+        $('li').click(function () {
+            $(this).parent().children().first().css('color', 'blue')
+        })
+
+
+         })
+
 </script>
 
 
