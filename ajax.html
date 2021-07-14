@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script src="./js/jquery.js"></script>
+<script>
+    $.ajax("data/user.json").done(function (data, status, jqXhr) {
+        alert("AJAX call completed successfully!");
+        console.log("Request status: " + status);
+        console.log("Data returned from server:");
+        console.log(data);
+    });
+
+    $.ajax()
+</script>
+</body>
+</html>
