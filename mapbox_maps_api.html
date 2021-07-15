@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<div id='map' style='width: 98vw; height: 98vh;'></div>
+<script src="./js/keys.js"></script>
+<script src="./js/mapbox-geocoder-utils.js"></script>
+<script>
+  mapboxgl.accessToken = MAPBOX_KEY;
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-118.243683, 34.052235]
+  });
+  // var marker = new mapboxgl.Marker()
+  //         .setLngLat([-118.44905374602695, 34.15115551474997])
+  //         .addTo(map);
+  // var popup = new mapboxgl.Popup()
+  //         // .setLngLat([-98.45251678925071,29.567244316609294])
+  //         .setHTML("<img width='50px' height='auto' src='https://static01.nyt.com/images/2021/02/17/dining/17tootired-grilled-cheese/17tootired-grilled-cheese-articleLarge.jpg?quality=75&auto=webp&disable=upscale' >")
+  //         // .setMaxWidth("100px")
+  //         .addTo(map)
+  // marker.setPopup(popup)
+
+  var favoriteResto = [
+    {
+      restaurant: "King Taco",
+      address: "4504 E 3rd St, Los Angeles, CA 90022"
+    },
+    {
+      restaurant: "In-N-Out",
+      address: "9245 Venice Blvd., Los Angeles, CA 90034"
+    },
+    {
+      restaurant: "Gracias Madre",
+      address: "8905 Melrose Ave, West Hollywood, CA 90069"
+    }
+
+  ]
+
+  favoriteResto.forEach(function (singlerestaurant) {
+
+    // var locationToSearchFor = "14500 Ventura Blvd, Sherman Oaks, CA 91403"
+    geocode(singlerestaurant.address, MAPBOX_KEY).then(function (restaurantCoordinates) {
+      // console.log(`Here are the coordinates for the following location ${locationToSearchFor}`)
+      // console.log(pitaCoordinates)
+      var pitaKitchenMarker = new mapboxgl.Marker()
+              .setLngLat(restaurantCoordinates)
+              .addTo(map);
+      var pitaKitchenPopUp = new mapboxgl.Popup()
+              // .setLngLat([-98.45251678925071,29.567244316609294])
+              .setHTML(singlerestaurant.restaurant)
+      // .setMaxWidth("100px")
+      .addTo(map)
+      pitaKitchenMarker.setPopup(pitaKitchenPopUp)
+    })
+  })
+
+
+</script>
+</body>
+</html>
