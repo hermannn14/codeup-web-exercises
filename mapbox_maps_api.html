@@ -55,7 +55,7 @@
               .addTo(map);
       var pitaKitchenPopUp = new mapboxgl.Popup()
               // .setLngLat([-98.45251678925071,29.567244316609294])
-              .setHTML(singlerestaurant.restaurant)
+              .setHTML('${singlerestaurant.restaurant}')
       // .setMaxWidth("100px")
       .addTo(map)
       pitaKitchenMarker.setPopup(pitaKitchenPopUp)
