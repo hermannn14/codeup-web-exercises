@@ -9,19 +9,20 @@
 
 <table id="products">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
-        </tr>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button
+<button id="refresh">Reload Tool Data</button>
 
 <!--<script src="./js/jquery.js"></script>-->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
     (function () {
@@ -41,17 +42,17 @@
                 //     $('#products').append('<tr>' + '<th>' + currentData.title + '</th>' + '</tr>')
                 // }
 
-                var html = "";
+                let html = "";
                 $('#insertProducts').empty();
 
                 data.forEach(function (tool) {
 
                     html = `<tr>
-                    <td>${tool.title}</td>
-                    <td>${tool.quantity}</td>
-                    <td>${tool.price}</td>
-                    <td>${tool.categories}</td>
-                    </tr>`;
+                                <td>${tool.title}</td>
+                                <td>${tool.quantity}</td>
+                                <td>${tool.price}</td>
+                                <td>${tool.categories}</td>
+                            </tr>`;
                     $('#insertProducts').append(html);
                 })
 
