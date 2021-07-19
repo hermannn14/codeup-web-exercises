@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<!--<script src="./js/keys.js"></script>-->
+<script src="js/keys.js"></script>
 <script src="./js/jquery.js"></script>
 <script>
     "use strict";
@@ -26,10 +26,10 @@
         }).done(function (data) {
             $('#card-holder').html('')
             for (let i = 0; i < 5; i++) {
-                let day = new Date(data.daily[2].dt * 1000)
+                let day = new Date(data.daily[i].dt * 1000)
                 $('#card-holder').append(`<div class="col">
                                        <div class="card border-success mb-3" style="max-width: 18rem;">
-                                       <div class="card-header bg-transparent border-success">Date:` + day.getMonth + `/` + day.getDay() + ` </div>
+                                       <h6 class="card-title">Date: ` + (day.getMonth() + 1) + `/` + day.getDate() + ` </h6>
                                        <div class="card">
                                              <ul class="list-group list-group-flush">
                                                  <li class="list-group-item">Description: ${data.daily[i].weather[0].description}</li>
@@ -62,7 +62,7 @@
     <div id="card-holder" class="row">
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-light border-success">Date:</div>
+            <h6 class="card-title">Date:</h6>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -75,7 +75,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: </div>
+            <h6 class="card-title">Date:</h6>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -88,7 +88,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: </div>
+            <h6 class="card-title">Date:</h6>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -101,7 +101,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: </div>
+            <h6 class="card-title">Date:</h6>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -114,7 +114,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: </div>
+            <h6 class="card-title">Date:</h6>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -129,7 +129,7 @@
     </div>
 </main>
 <div id='map' style='width: 90vw; height: 90vw;'></div>
-<script src="js/keys.js"></script>
+
 <script>
     mapboxgl.accessToken = MAPBOX_KEY;
     let map = new mapboxgl.Map({
@@ -164,25 +164,6 @@
             ],
             essential: true //Reduced motion animation
         })
-            // .done(function (data) {
-            //     $('#card-holder').html('')
-            //     for (let i = 0; i < 5; i++) {
-            //         let day = new Date(data.daily[2].dt * 1000)
-            //         $('#card-holder').append(`<div class="col">
-            //                            <div class="card border-success mb-3" style="max-width: 18rem;">
-            //                            <div class="card-header bg-transparent border-success">Date:`+day.getMonth + `/`+ day.getDay() +` </div>
-            //                            <div class="card">
-            //                                  <ul class="list-group list-group-flush">
-            //                                      <li class="list-group-item">Description:${data.daily[i].weather[0].description}</li>
-            //                                      <li class="list-group-item">Humidity:${data.daily[i].humidity}</li>
-            //                                      <li class="list-group-item">Wind:${data.daily[i].wind.speed}</li>
-            //                                      <li class="list-group-item">Pressure:${data.daily[i].temp.max} / ${data.daily[i].temp.min} </li>
-            //                                  </ul>
-            //                             </div>`)
-            //
-            //     }
-            //     console.log("Daily forecast", data)
-            // })
 
     })
 
