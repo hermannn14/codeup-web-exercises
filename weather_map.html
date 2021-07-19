@@ -23,9 +23,24 @@
             lat:    29.423017,
             lon:   -98.48527,
             units: "imperial"
-        }).done(function(data) {
-            console.log('Daily Forecast', data);
-        });
+        }).done(function (data) {
+            $('#card-holder').html('')
+            for (let i = 0; i < 5; i++) {
+                let day = new Date(data.daily[2].dt * 1000)
+                $('#card-holder').append(`<div class="col">
+                                       <div class="card border-success mb-3" style="max-width: 18rem;">
+                                       <div class="card-header bg-transparent border-success">Date:` + day.getMonth + `/` + day.getDay() + ` </div>
+                                       <div class="card">
+                                             <ul class="list-group list-group-flush">
+                                                 <li class="list-group-item">Description: ${data.daily[i].weather[0].description}</li>
+                                                 <li class="list-group-item">Humidity: ${data.daily[i].humidity}</li>
+                                                 <li class="list-group-item">Wind: ${data.daily[i].wind_speed}</li>
+                                                 <li class="list-group-item">Pressure: ${data.daily[i].temp.max} / ${data.daily[i].temp.min} </li>
+                                             </ul>
+                                        </div>`)
+
+            }
+        })
 
     })
 
@@ -44,10 +59,10 @@
     </form>
     <br>
     <div class="container">
-    <div class="row">
+    <div id="card-holder" class="row">
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-light border-success">Date: 07-15</div>
+            <div class="card-header bg-light border-success">Date:</div>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -60,7 +75,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: 07-16</div>
+            <div class="card-header bg-transparent border-success">Date: </div>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -73,7 +88,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: 07-17</div>
+            <div class="card-header bg-transparent border-success">Date: </div>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -86,7 +101,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: 07-18</div>
+            <div class="card-header bg-transparent border-success">Date: </div>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -99,7 +114,7 @@
         </div>
         <div class="col">
         <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">Date: 07-19</div>
+            <div class="card-header bg-transparent border-success">Date: </div>
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description</li>
@@ -149,11 +164,27 @@
             ],
             essential: true //Reduced motion animation
         })
-    })
+            // .done(function (data) {
+            //     $('#card-holder').html('')
+            //     for (let i = 0; i < 5; i++) {
+            //         let day = new Date(data.daily[2].dt * 1000)
+            //         $('#card-holder').append(`<div class="col">
+            //                            <div class="card border-success mb-3" style="max-width: 18rem;">
+            //                            <div class="card-header bg-transparent border-success">Date:`+day.getMonth + `/`+ day.getDay() +` </div>
+            //                            <div class="card">
+            //                                  <ul class="list-group list-group-flush">
+            //                                      <li class="list-group-item">Description:${data.daily[i].weather[0].description}</li>
+            //                                      <li class="list-group-item">Humidity:${data.daily[i].humidity}</li>
+            //                                      <li class="list-group-item">Wind:${data.daily[i].wind.speed}</li>
+            //                                      <li class="list-group-item">Pressure:${data.daily[i].temp.max} / ${data.daily[i].temp.min} </li>
+            //                                  </ul>
+            //                             </div>`)
+            //
+            //     }
+            //     console.log("Daily forecast", data)
+            // })
 
-        // var marker = new mapboxgl.Marker ({
-        //     draggable: true
-        // })
+    })
 
     })
 
