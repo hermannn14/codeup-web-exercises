@@ -11,6 +11,17 @@
     main {
         font-family: 'Indie Flower', cursive
     }
+    span {
+        font-family: "Al Bayan";
+    }
+    #main1 {
+        font-size: 80px;
+    }
+    #firstImg {
+        /*display: block;*/
+        height: 150px;
+        width: 230px;
+    }
 </style>
 
 </head>
@@ -56,10 +67,11 @@
 </script>
 <main>
     <nav class="navbar navbar-light bg-primary">
-        <span class="navbar-brand mb-0 h1">WeatherMap</span>
+        <span id="main1" class="navbar-brand mb-0 h1">WeatherMap</span>
         <span class="navbar-brand mb-0 h1">Current City:<p id="anyCity">Los Angeles</p></span>
 
     </nav>
+    <img id="firstImg" src="img/Weather.jpeg" class="rounded mx-auto d-block" alt="Weather">
     <br>
     <form class="form-inline">
         <h6> Place</h6><br>
